@@ -1,0 +1,58 @@
+# version: '3.8'
+# services: 
+#   front-end:
+#     container_name: front-end
+#     hostname: front-end
+#     # image: front-end
+#     build: ./front-end/
+#     restart: unless-stopped
+#     ports: 
+#       - "4000:3000"
+#     volumes:
+#       - "./front-end:/src/app"
+#     networks:
+#       - app-network 
+#     depends_on:
+#       - back-end
+
+#   back-end: 
+#     container_name: back-end
+#     hostname: back-end
+#     # image: back-end
+#     build: ./back-end/
+#     restart: unless-stopped
+#     ports: 
+#       - "4001:3001"
+#     volumes:
+#       - "./back-end:/src/app"
+#     networks:
+#       - app-network
+#     environment:
+#       POSTGRES_USER: postgresuser
+#       POSTGRES_USER_PW: postgrespassword
+#       POSTGRES_HOST: db
+#       POSTGRES_PORT: 5432
+#       POSTGRES_DB: movies_list
+#     depends_on:
+#       - db
+
+#   db:
+#     container_name: db
+#     hostname: db
+#     image: postgres
+#     restart: unless-stopped
+#     # ports: 
+#     #   - "5432:5432"
+#     environment:
+#       POSTGRES_USER: postgresuser
+#       POSTGRES_PASSWORD: ReallyLongPasswordForPostgres
+#       POSTGRES_DB: dockerize
+
+#     volumes:
+#       - ./db:/var/lib/postgresql/data
+#     networks:
+#       - app-network
+
+# networks:
+#   app-network:
+#     driver: bridge
